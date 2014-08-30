@@ -19,43 +19,39 @@ module.exports=function(grunt){
 		browserify: {
   			dist: {
 				files: {
-      					'build/build.js': ['temp/app.js'],
+      					'build/build.js': ['temp/app.js']
       				},
     				options: {
       					//transform: ['coffeeify']
     				}
   			}
 		},
-
-		remove: {
-    			options: {
-      				trace: true
-    			},
-    			//fileList: [],
-    			dirList: ["c:\web\Winginx\home-node\react ts\examples\1" ]
-  		},
-
 		
 		
 		watch:{
-			scripts:{
-				files:["src/*.js"],
-				tasks:["typescript","browserify"]
-			},
-			css:{
-				files:["src/css/*.css"],
-				tasks:[]
-			}
-		}	
+            //"ts":{
+            //    files: '**/*.ts',
+            //    tasks:["typescript","browserify"]
+            //},
+
+            //"js":{
+            //    files: '**/*.js',
+			//	tasks:["browserify"]
+            //}
+
+            scripts:{
+                files: '**/*.*',
+                tasks:["typescript","browserify"]
+            }
+
+        }
 	});
 
-	//подгружаем необходимые модули
+
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-typescript');
-	grunt.loadNpmTasks('grunt-remove');
 
-	//регистрируем задачу
-	grunt.registerTask('default',["typescript","browserify"]);
-	//grunt.registerTask('default',["browserify"]);
+	//grunt.registerTask('default',["typescript","browserify","watch"]);
+    grunt.registerTask('default',["typescript","browserify"]);
 }
