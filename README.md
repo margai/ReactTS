@@ -12,16 +12,22 @@ Installation
 git clone https://github.com/margai/ReactTS.git
 ```
 
-
-Example
------------------
+Example: Define component  (use CommonJs)
+-----------------------------------
 
 ```js
-alert(123123);"sdsdsadasd"
-class thank{
-    a:any=100
-    
-}
+declare  var module:any;
+import React=require ("ReactTS");
+
+class Test extends React.BaseComponent {
+    public render() {
+        return React.DOM.div(null, "hello world");
+    }
+};
+
+
+React.registerModule(module);
+export=Test;
 ```
 
 
