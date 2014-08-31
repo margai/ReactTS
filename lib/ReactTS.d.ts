@@ -1,11 +1,12 @@
 ﻿declare module ReactTS{
-    //============================================== reactTS special  ================================================//
+
     function registerModule(_module:any):any;
 
     class BaseComponent implements ReactComponent<any, any> {
         state:any;
         props:any;
         constructor(a:any,b:any);
+        static applyMixins(...arg:any[] ):void; //проверить правильно ли продекларировал
         //========================================= implements ReactComponent ========================================//
         refs: { [ref: string]: ReactComponent<any, any>; }
         getDOMNode(): Element;
@@ -17,16 +18,8 @@
         forceUpdate(callback?: () => void): void;
 
         //расширенный список методов который отсутствцет в ReactComponent
-        isMounted():bool;
-
+        isMounted():boolean;
     }
-
-
-    //interface BaseComponent extends A, B { }
-    /*export var BaseComponent: {
-        new(): ReactComponent<any,any>;
-        prototype: ReactComponent<any,any>;
-    };*/
 
     //================================================================================================================//
     //               Third-party code: https://github.com/wizzard0/react-typescript-definitions                       //

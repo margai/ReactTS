@@ -5,7 +5,7 @@ class Test extends React.BaseComponent {
 
     //инициализация состояния
     getInitialState() {
-	console.log("this=",this);
+	    console.log("this=",this);
         return {count:0};
     }
 

@@ -3,10 +3,8 @@
 	"version": "0.1.0",
 	"author": "4dinterface",
 	"description": "adapter",
-	"dependencies": {
-	},
-	"devDependencies": {
-	},
+	"dependencies": {},
+	"devDependencies": {},
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:margai/ReactTS.git"
